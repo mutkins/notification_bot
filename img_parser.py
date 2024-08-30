@@ -1,9 +1,10 @@
 import os
 import random
 from serpapi import GoogleSearch
+from dotenv import load_dotenv
 
-# Ваш API-ключ для SerpAPI
-SERPAPI_KEY = 'cc1754ef7f1e1d415856fe67b0513997d711a0e6920e9e3e1b7ca9944bb163d4'
+load_dotenv()
+SERPAPI_KEY = os.environ.get('SERPAPI_KEY')
 
 
 async def get_random_img(query='пустой запрос'):
