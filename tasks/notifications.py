@@ -44,9 +44,10 @@ async def log_jira_time_end_of_month():
 
 
 async def meeting():
+    log.info('CRON TRIGGERED meeting')
     #  Если сегодня будний день
     if datetime.now().weekday() <= 4:
-        log.info('CRON TRIGGERED meeting')
+        log.info('TODAY IS WEEKDAY, MESSAGE WILL BE SENT')
         img = await get_random_img("мем созвон на работе")
         await bot.send_photo(chat_id=chat_id,
                              caption="⚠️⚠️⚠️<b>ДЕЖУРНОЕ НАПОМИНАНИЕ</b>⚠️⚠️⚠️\nЕжедневный статус через 5 минут",
