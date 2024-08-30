@@ -7,7 +7,7 @@ from util import should_i_send_message_now
 import os
 
 load_dotenv()
-chat_id = os.environ.get('qa_dream_team_chat_id')
+chat_id = os.environ.get('my_chat_id')
 
 
 async def change_pass():
