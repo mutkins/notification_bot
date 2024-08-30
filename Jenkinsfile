@@ -3,6 +3,7 @@ pipeline {
     environment {
        tgBot_id = credentials('daily_bot_id')
        my_chat_id = credentials('my_chat_id')
+       SERPAPI_KEY = credentials('SERPAPI_KEY')
     }
     options {
         retry(3) 
