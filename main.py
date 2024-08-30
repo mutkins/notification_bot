@@ -5,7 +5,7 @@ from handlers import register_all_handlers
 
 from tasks import scheduler
 
-# register_all_handlers(dp)
+register_all_handlers(dp)
 
 
 async def on_startup(_):

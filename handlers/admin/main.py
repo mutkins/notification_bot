@@ -1,12 +1,9 @@
 from aiogram import Dispatcher
-from handlers.admin.actions import send_message_to_user
-from dotenv import load_dotenv
-import os
-load_dotenv()
+from handlers.admin.actions import list_keys, add_key, get_log, send_service_notification
 
 
 def register_admin_handlers(dp: Dispatcher):
-    # this handler activates only when admin replied message
-    dp.register_message_handler(send_message_to_user,
-                                lambda message: message.from_user.id == int(os.environ.get('my_chat_id'))
-                                                and bool(message.reply_to_message))
+    dp.register_message_handler(send_service_notification, state='*', commands=['service'])
+    dp.register_message_handler(get_log, state='*', commands=['log'])
+    dp.register_message_handler(list_keys, state='*', commands=['list'])
+    dp.register_message_handler(add_key, state='*', commands=['add_key'])

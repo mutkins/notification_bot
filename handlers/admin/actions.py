@@ -1,11 +1,8 @@
 from aiogram import types
-from create_bot import bot
+from handlers.other.check_permissions import check_admin_rights
 
 
-async def send_message_to_user(message: types.Message):
-    # Send message to user, which message was forwarded and replied
-    await bot.send_message(chat_id=message.reply_to_message.forward_from.id, text=message.text)
-
-
-
-
+@check_admin_rights
+async def get_log(message: types.Message):
+    file = types.InputFile('main.log')
+    await message.answer_document(file)
