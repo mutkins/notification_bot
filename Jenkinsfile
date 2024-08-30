@@ -4,6 +4,7 @@ pipeline {
        tgBot_id = credentials('daily_bot_id')
        my_chat_id = credentials('my_chat_id')
        SERPAPI_KEY = credentials('SERPAPI_KEY')
+       qa_dream_team_chat_id = credentials('qa_dream_team_chat_id')
     }
     options {
         retry(3) 
