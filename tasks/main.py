@@ -9,7 +9,7 @@ async def scheduler():
     scheduler = AsyncIOScheduler()
 
     # Каждый будний день. Фильтр внутри
-    scheduler.add_job(meeting, CronTrigger(hour=13, minute=30))
+    scheduler.add_job(meeting, CronTrigger(hour=11, minute=35))
     # Каждую среду
     scheduler.add_job(log_jira_time_wednesday, CronTrigger(day_of_week=2, hour=17, minute=30))
     # В последний день месяца. Крон на каждый день, а внутри фильтрация, ибо всё сложно
