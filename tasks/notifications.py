@@ -34,12 +34,12 @@ async def log_jira_time_end_of_month():
         log.info('SOME OF CHECKS FAILED, MESSAGE WONT BE SENT')
 
 
-async def meeting():
-    log.info('CRON TRIGGERED meeting')
-    #  Если сегодня будний день
-    if datetime.now().weekday() <= 4:
-        log.info('TODAY IS WEEKDAY, MESSAGE WILL BE SENT')
-        await send(query="мем созвон на работе", text="Ежедневный статус через 5 минут")
+# async def meeting():
+#     log.info('CRON TRIGGERED meeting')
+#     #  Если сегодня будний день
+#     if datetime.now().weekday() <= 4:
+#         log.info('TODAY IS WEEKDAY, MESSAGE WILL BE SENT')
+#         await send(query="мем созвон на работе", text="Ежедневный статус через 5 минут")
 
 
 async def send(query='null', text='null'):
